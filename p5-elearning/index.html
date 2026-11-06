@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nazwa Zahira Sya'bana</title>
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Georgia, "Times New Roman", serif;
+      background-color: #1d6f6b;
+      color: #2b2118;
+      line-height: 1.65;
+      padding: 24px;
+    }
+
+    .buku {
+      max-width: 540px;
+      background-color: #fbf4e4;
+      padding: 32px 28px 32px 36px;
+      border-left: 18px solid #b5452b;
+      box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 0 0 16px;
+      line-height: 1.25;
+    }
+
+    p { margin: 0 0 12px; }
+
+    button {
+      margin-top: 8px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-family: inherit;
+      font-weight: bold;
+      color: #fbf4e4;
+      background-color: #b5452b;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { background-color: #8e3320; }
+
+    #hasil {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 2px dashed #b5452b;
+      min-height: 6rem;
+    }
+    #judul { font-size: 1.4rem; font-weight: bold; }
+    #penulis { font-style: italic; margin-bottom: 6px; }
+  </style>
+</head>
+<body>
+  <div class="buku">
+    <!-- Teks 1: heading -->
+    <h1>Rekomendasi Novel Populer di Indonesia</h1>
+
+    <!-- Teks 2-4: tiga paragraf -->
+    <p>
+      Buku adalah jendela dunia. Membaca buku dapat memperluas wawasan, meningkatkan imajinasi, dan menambah pengetahuan.
+    </p>
+    <p>
+      Indonesia punya banyak penulis hebat yang telah menghasilkan karya-karya luar biasa. Beberapa novel populer di Indonesia telah menjadi favorit banyak pembaca.
+    </p>
+    <p>
+      Berikut rekomendasi novel populer di Indonesia:
+    </p>
+
+    <!-- Interaksi JavaScript -->
+    <button id="tombol">Rekomendasikan Novel</button>
+    <div id="hasil">
+      <div id="judul">Belum ada rekomendasi</div>
+      <div id="penulis"></div>
+      <div id="catatan"></div>
+    </div>
+  </div>
+
+  <script>
+    var novel = [
+      { judul: "Laskar Pelangi", penulis: "Andrea Hirata",
+        catatan: "Kisah sepuluh anak sekolah di Belitung yang gigih mengejar mimpi." },
+      { judul: "Bumi Manusia", penulis: "Pramoedya Ananta Toer",
+        catatan: "Novel sejarah tentang Minke di masa kolonial Hindia Belanda." },
+      { judul: "Dilan 1990", penulis: "Pidi Baiq",
+        catatan: "Cerita cinta remaja di Bandung tahun 1990 yang manis dan lucu." },
+      { judul: "Negeri 5 Menara", penulis: "A. Fuadi",
+        catatan: "Perjalanan enam santri di pesantren dengan semangat man jadda wajada." },
+      { judul: "Laut Bercerita", penulis: "Leila S. Chudori",
+        catatan: "Kisah persahabatan dan kehilangan di tengah masa gelap Reformasi." },
+      { judul: "Perahu Kertas", penulis: "Dee Lestari",
+        catatan: "Kisah cinta dan pencarian jati diri dua anak muda pencinta seni." },
+      { judul: "Ayat-Ayat Cinta", penulis: "Habiburrahman El Shirazy",
+        catatan: "Cerita seorang mahasiswa Indonesia di Kairo antara cinta dan iman." }
+    ];
+
+    document.getElementById("tombol").addEventListener("click", function () {
+      var pilihan = novel[Math.floor(Math.random() * novel.length)];
+      document.getElementById("judul").textContent = pilihan.judul;
+      document.getElementById("penulis").textContent = "oleh " + pilihan.penulis;
+      document.getElementById("catatan").textContent = pilihan.catatan;
+    });
+  </script>
+</body>
+</html>
